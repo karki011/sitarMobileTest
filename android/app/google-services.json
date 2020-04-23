@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "358220167994",
+    "firebase_url": "https://rest-aa83c.firebaseio.com",
+    "project_id": "rest-aa83c",
+    "storage_bucket": "rest-aa83c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358220167994:android:400743cf126e8ac1afae03",
+        "android_client_info": {
+          "package_name": "subashkarki.worldclock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358220167994-cfqjvh9f5ti8a5la9cj0d5q17648v1un.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh3-Wqcrg7uOOyuXYyLMiiXqlYyrQQ1uc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358220167994-cfqjvh9f5ti8a5la9cj0d5q17648v1un.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
