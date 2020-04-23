@@ -24,7 +24,12 @@ class _SingInState extends State<SingIn> {
         child: RaisedButton(
             child: Text('Sign in Anon'),
             onPressed: () async {
-              await _auth.signInAnon();
+              dynamic result = await _auth.signInAnon();
+              if (result == null) {
+                print('Signing in error');
+              } else {
+                print('Signed in as uid: ${result.uid}');
+              }
             }),
       ),
     );
