@@ -10,28 +10,52 @@ class _SingInState extends State<SingIn> {
   // user SignInAnon from service auth.dart
 
   final AuthService _auth = AuthService();
+
+  // text field state
+
+  String email = '';
+  String password = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown,
+      backgroundColor: Colors.brown[50],
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         title: Text('Sin in to Brew Crew'),
         elevation: 0.0,
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50),
-        child: RaisedButton(
-            child: Text('Sign in Anon'),
-            onPressed: () async {
-              dynamic result = await _auth.signInAnon();
-              if (result == null) {
-                print('Signing in error');
-              } else {
-                print('Signed in as uid: ${result.uid}');
-              }
-            }),
-      ),
+          padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50),
+          child: Form(
+              child: Column(
+            children: <Widget>[
+              SizedBox(height: 20),
+              TextFormField(
+                onChanged: (val) {
+                  setState(() => email = val);
+                },
+              ),
+              SizedBox(height: 20),
+              TextFormField(
+                obscureText: true,
+                onChanged: (val) {
+                  setState(() => password = val);
+                },
+              ),
+              SizedBox(height: 20),
+              RaisedButton(
+                color: Colors.pink[400],
+                onPressed: () async {
+                  print(email);
+                  print(password);
+                },
+                child: Text(
+                  'Sign In',
+                  style: TextStyle(color: Colors.white),
+                ),
+              )
+            ],
+          ))),
     );
   }
 }
