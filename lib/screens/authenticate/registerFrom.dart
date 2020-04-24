@@ -1,38 +1,35 @@
 import 'package:com/services/auth.dart';
 import 'package:flutter/material.dart';
 
-class SingIn extends StatefulWidget {
+class Register extends StatefulWidget {
   final Function toggleView;
 
-  SingIn({this.toggleView});
-
+  Register({this.toggleView});
   @override
-  _SingInState createState() => _SingInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SingInState extends State<SingIn> {
-  // user SignInAnon from service auth.dart
-
+class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
 
-  // text field state
+  // form state
+  String email = "";
+  String password = "";
 
-  String email = '';
-  String password = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.brown[50],
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
-        title: Text('Sign In to Brew Crew'),
+        title: Text('Sing up to Brew Crew'),
         actions: <Widget>[
           FlatButton.icon(
               onPressed: () {
                 widget.toggleView();
               },
               icon: Icon(Icons.person),
-              label: Text('Register'))
+              label: Text('Sign In'))
         ],
         elevation: 0.0,
       ),
@@ -62,7 +59,7 @@ class _SingInState extends State<SingIn> {
                   print(password);
                 },
                 child: Text(
-                  'Sign In',
+                  'Sign up',
                   style: TextStyle(color: Colors.white),
                 ),
               )
