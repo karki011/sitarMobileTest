@@ -29,8 +29,21 @@ class AuthService {
       return null;
     }
   }
+
 //  TODO: sign with email / password
-//  TODO: Register with email / password
+//   Register with email / password
+  Future registerWithEmailAndPassword(String email, String password) async {
+    try {
+      AuthResult result = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      FirebaseUser user = result.user;
+      return _userFromFirebaseUser(user);
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
 //  TODO: Register with google
 //  TODO: sign in  with google
 //  sign out
@@ -39,7 +52,6 @@ class AuthService {
     try {
       return await _auth.signOut();
     } catch (e) {
-      print('Error in signout methout');
       print(e.toString());
       return null;
     }
